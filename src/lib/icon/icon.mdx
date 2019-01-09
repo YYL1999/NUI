@@ -1,0 +1,83 @@
+---
+name: 图标
+route: /icon
+---
+
+import { Playground, PropsTable } from 'docz'
+import Icon from './index.js'
+
+## 图标
+
+<PropsTable of={Icon} />
+
+## 代码演示
+
+### 基本用法
+
+<Playground>
+  <Icon type='save'/>
+</Playground>
+
+### 颜色修改
+
+<Playground>
+  <div className="nuiicon-row">
+    <Icon type='share' color='#1770a8' />
+    <Icon type='publish' color='#41395b' />
+    <Icon type='list' color='#6f8657' />
+    <Icon type='map' color='#94232d' />
+  </div>
+</Playground>
+
+### 所有
+
+<Playground>
+  <div className="nuiicon-wrapper">
+    <Icon type='before' /> before 
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='next' /> next 
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='list' /> list  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='map' /> map  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='publish' /> publish 
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='chinese' /> chinese  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='rule' /> rule  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='save' /> save  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='set' /> set  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='user' /> user 
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='close' /> close  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='edit' /> edit 
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='share' /> share  
+  </div>
+  <div className="nuiicon-wrapper">
+    <Icon type='test' /> test 
+  </div>
+
+</Playground>
+
+### 补充
+最近考试周，没时间补入icon，等寒假加入其它的 
+
+图标来源为[Iconfont](https://www.iconfont.cn)，侵删。

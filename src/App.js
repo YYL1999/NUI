@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from './lib';
+import { Button,Icon } from './lib';
 
 class App extends Component {
   myClick() {
@@ -14,6 +14,9 @@ class App extends Component {
           round
           loading
         >按钮</Button>
+        <Icon type="next" /> next<br/>
+        <Icon type="before"/> before
+
       </div>
     );
   }

@@ -88,8 +88,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "ddev": "docz dev",
-    "dbuild": "docz build",
+    "doc:dev": "docz dev",
+    "doc:build": "docz build",
     "cbuild": "(cross-env BABEL_OUTPUT=commonjs babel src/components --out-dir lib/ & node-sass -r src/components -o lib) && (babel src/components --out-dir esm/ & node-sass -r src/components -o esm)"
   },
   "eslintConfig": {
