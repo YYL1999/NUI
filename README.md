@@ -1,15 +1,16 @@
-## Zhui
+## NUI
 
-A Chinese style component library
+不洗碗工作室的UI框架 
+由雷鹏飞研发
 
-[文档](https://zhui-team.github.io/zhui/)
 
-可以用star来鼓励一下作者么？
+
+喜欢请star，蟹蟹
 
 ## 📦 Install
 
 ```bash
-npm install zhui --save
+npm install NUI --save
 ```
 
 ## 🔨 Usage
