@@ -12,8 +12,8 @@ class App extends Component {
           onClick={this.myClick}
           type="primary"
           round
-          loading
-        >按钮</Button>
+         
+        >按钮ss</Button>
         <Icon type="next" /> next<br/>
         <Icon type="before"/> before
 
