@@ -1,69 +1,126 @@
-import React, {PureComponent} from 'react'
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import cn from 'astro-classname';
 
-export default class Input extends PureComponent{
-    static defaultProps={
-       prefixCls: 'nui-input',
-       type: 'text',
-       disabled: false
-    };
-    static PropTypes={
-        type: PropTypes.string,
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    size: PropTypes.oneOf(['small', 'default', 'large']),
-    maxLength: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    disabled: PropTypes.bool,
-    value: PropTypes.any,
-    defaultValue: PropTypes.any,
+import './index.scss';
+
+const BLACK_LIST = [
+  'className',
+  'type',
+  'width',
+  'prefix',
+  'size',
+  'theme',
+  'addonBefore',
+  'addonAfter',
+  'autoFocus',
+  'onPressEnter',
+  'icon'
+];
+
+export default class Input extends PureComponent {
+  static propTypes = {
     className: PropTypes.string,
+    type: PropTypes.string,
+    width: PropTypes.number,
+    placeholder: PropTypes.string,
+    prefix: PropTypes.string,
+    size: PropTypes.oneOf(['large', 'medium', 'small']),
+    theme: PropTypes.oneOf(['default', 'primary', 'success', 'danger']),
+    value: PropTypes.any,
     addonBefore: PropTypes.node,
     addonAfter: PropTypes.node,
-    prefixCls: PropTypes.string,
+    icon: PropTypes.node,
+    disabled: PropTypes.bool,
+    autoFocus: PropTypes.bool,
     onPressEnter: PropTypes.func,
     onKeyDown: PropTypes.func,
-    onKeyUp: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    prefix: PropTypes.node,
-    suffix: PropTypes.node,
+    onChange: PropTypes.func
+  }
+
+  static defaultProps = {
+    className: '',
+    type: 'text',
+    theme: 'default',
+    prefix: 'nui-input',
+    disabled: false,
+    autoFocus: false
+  }
+
+  componentDidMount() {
+    const { autoFocus } = this.props;
+
+    if (autoFocus) {
+      this.input.focus();
     }
-    handleKeyDown = (e) => {
-        const { onPressEnter, onKeyDown } = this.props;
-        if (e.keyCode === 13 && onPressEnter) {
-          onPressEnter(e);
+  }
+
+  handleKeyDown = (e) => {
+    const { onKeyDown, onPressEnter } = this.props;
+    if (onKeyDown) {
+      onKeyDown(e);
+    }
+
+    if (e.keyCode === 13 && onPressEnter) {
+      onPressEnter(e);
+    }
+  }
+
+  focus() {
+    this.input.focus();
+  }
+
+  saveInput = (node) => {
+    this.input = node;
+  }
+
+  render() {
+    const {
+      className,
+      width,
+      value,
+      theme,
+      size,
+      addonBefore,
+      addonAfter,
+      icon,
+      prefix,
+      disabled
+    } = this.props;
+
+    const classes = cn('nui-input-wrapper', className, {
+      [`${prefix}-wrapper-${size}`]: size && size !== 'medium',
+      [`${prefix}-group`]: addonAfter || addonBefore
+    });
+
+    const nodeProps = omit(this.props, BLACK_LIST);
+
+    return (
+      <div className={classes} style={{ width }}>
+        {
+          addonBefore &&
+          <span className={`${prefix}-group-addon`}>{addonBefore}</span>
         }
-        if (onKeyDown) {
-          onKeyDown(e);
+        {
+          icon && !addonBefore &&
+          <span className={`${prefix}-icon-wrapper`}>{icon}</span>
         }
-      }
-    
-      focus() {
-        this.input.focus();
-      }
-    
-      blur() {
-        this.input.blur();
-      }
-    
-      select() {
-        this.input.select();
-      }
-    
-    getInputClassName() {
-        const { prefixCls, size, disabled } = this.props;
-        return cn(prefixCls, {
-          [`${prefixCls}-small`]: size === 'small',
-          [`${prefixCls}-large`]: size === 'large',
-          [`${prefixCls}-disabled`]: disabled,
-        });
-      }
-    
+        <input
+          className={cn(prefix, {
+            [`${prefix}-${theme}`]: theme && theme !== 'default',
+            [`${prefix}-disabled`]: disabled,
+          })}
+          onKeyDown={this.handleKeyDown}
+          value={value}
+          ref={this.saveInput}
+          {...nodeProps}
+        />
+        {
+          addonAfter &&
+          <span className={`${prefix}-group-addon`}>{addonAfter}</span>
+        }
+      </div>
+    );
+  }
 }

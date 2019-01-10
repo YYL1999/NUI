@@ -17,8 +17,8 @@ npm install NUI --save
 ## 🔨 Usage
 
 ```jsx
-import { Button } from 'NUI';
-ReactDOM.render(<Button />, mountNode);
+import { Input } from 'NUI';
+ReactDOM.render(<Input />, mountNode);
 ```
 
 ## ⌨️ Development

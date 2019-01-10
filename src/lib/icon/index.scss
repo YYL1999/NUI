@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'NUIicon';  /* project id 1005355 */
-    src: url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.eot');
-  src: url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1007453_26wtyd2wrkr.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1007453_lwy71nmaks.eot');
+    src: url('//at.alicdn.com/t/font_1007453_lwy71nmaks.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1007453_lwy71nmaks.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1007453_lwy71nmaks.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1007453_lwy71nmaks.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1007453_lwy71nmaks.svg#iconfont') format('svg');
   }
   
   .NUIicon {
@@ -37,4 +37,6 @@
     &-edit::before{content:'\eb64'}
     &-share::before{content:'\eb63'}
     &-test::before{content:'\eb61'}
+    &-search::before{content:'\e62e'}
+    &-disabled::before{content:'\e645'}
   }

@@ -1,0 +1,61 @@
+---
+name: 走马灯
+route: /carousel
+---
+
+import { Playground, PropsTable } from 'docz'
+import Carousel from './index.js'
+
+
+import '../../doczscss/index.scss'
+
+## 走马灯
+
+## 代码演示
+
+### 默认 
+
+<Playground>
+  <Carousel
+    items={[
+      {
+        src: 'http://lpf.yywlx.cn/DSC_6400.jpg',
+        alt: 'images-1',
+      },
+      {
+        src: 'http://lpf.yywlx.cn/DSC_6400.jpg',
+        alt: 'images-2',
+      },
+      {
+        src: 'http://lpf.yywlx.cn/DSC_6400.jpg',
+        alt: 'images-3',
+      }   
+    ]}
+    speed={1.5}       
+    delay={3}         
+    pause={true}     
+    autoplay={true}   
+    dots={true}       
+    arrows={true}     
+  />
+</Playground> 
+
+## 使用 
+
+### 意义 
+
+```
+
+speed={1.5}       #轮播切换图片的速度 
+delay={3}         #自动轮播时候停留的时间
+pause={true}      #鼠标放上图片是否停止自动轮播
+autoplay={true}   #是否自动轮播
+dots={true}       #是否需要下面的轮播点点位
+arrows={true}     #是否需要左右点击箭头
+```
+
+## 属性 
+
+<PropsTable of={Carousel} />
+
+
