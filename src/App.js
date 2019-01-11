@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Message} from './lib';
+import { Button,Icon ,Message,Switch} from './lib';
 
 class App extends Component {
   myClick() {
@@ -18,6 +18,7 @@ class App extends Component {
         <Icon type="next" /> next<br/>
         <Icon type="before"/> before
         <Message></Message>
+        <Switch defaultChecked  />
       </div>
     );
   }
