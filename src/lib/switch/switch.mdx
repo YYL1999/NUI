@@ -1,0 +1,63 @@
+---
+name: 开关
+route: /switch
+---
+
+import { Playground, PropsTable } from 'docz'
+import  Switch  from './index'
+import Icon from '../icon/index.js'
+
+
+# 开关
+
+## 代码演示
+
+### 基本用法
+
+<Playground>
+  <Switch defaultChecked />
+</Playground>
+
+### 不可用 
+
+<Playground>
+  <Switch defaultChecked disabled={true}/>
+</Playground>
+
+### 文字和图标 
+
+<Playground>
+    <div>
+    <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+    <br />
+    <Switch checkedChildren="1" unCheckedChildren="0" />
+    <br />
+    <Switch checkedChildren={<Icon type="next" />} unCheckedChildren={<Icon type="before" />} defaultChecked />
+  </div>
+</Playground>
+
+### 两种大小 
+
+<Playground>
+    <div>
+    <Switch defaultChecked />
+    <br />
+    <Switch size="small" defaultChecked />
+  </div>
+</Playground>
+
+### 加载中 
+
+<Playground>
+    <div>
+    <Switch loading defaultChecked />
+    <br />
+    <Switch size="small" loading />
+  </div>
+</Playground>
+
+## API 
+
+<PropsTable of={Switch} />
+
+

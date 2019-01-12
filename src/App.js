@@ -19,6 +19,7 @@ class App extends Component {
         <Icon type="before"/> before
         <Message></Message>
         <Switch defaultChecked  />
+        <Switch disabled={true} defaultChecked />
       </div>
     );
   }

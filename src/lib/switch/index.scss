@@ -4,8 +4,8 @@ $switch-sm-checked-margin-left: -(switch-sm-height - 3px);
 $switch-disabled-opacity: 0.4;
 $switch-color: #fff;
 $ease-in-out-circ : cubic-bezier(0.78, 0.14, 0.15, 0.86);
-//$switch-prefix-cls: `${ant-prefix}-switch`;
 $switch-duration: .36s;
+$font-size-sm: 12px;
 @import '../../color.scss';
 
 .nui-switch {
@@ -55,12 +55,12 @@ $switch-duration: .36s;
   }
 
   &-loading-icon {
-    // loading default use animation
-    // animation: loadingCircle 1s infinite linear;
+     //loading default use animation
+    //animation: loadingCircle 1s infinite linear;
     background: transparent;
     z-index: 1;
     display: none;
-    font-size: 12px;
+    font-size: 15px;
     svg {
       position: absolute;
       left: 0;
@@ -73,7 +73,7 @@ $switch-duration: .36s;
 
   &-loading &-loading-icon {
     display: inline-block;
-   // color: $text-color;
+    color: $text-color;
   }
 
   &-checked &-loading &-loading-icon {
@@ -94,11 +94,11 @@ $switch-duration: .36s;
     min-width: 28px;
     line-height: 4px;
 
-    // .@{switch-prefix-cls}-inner {
-    //   margin-left: 18px;
-    //   margin-right: 3px;
-    //   font-size: @font-size-sm;
-    // }
+    .nui-switch-inner {
+      margin-left: 18px;
+      margin-right: 3px;
+      font-size: $font-size-sm;
+    }
 
     &:after {
       width: $switch-sm-height - 4px;
@@ -116,12 +116,12 @@ $switch-duration: .36s;
     height: $switch-sm-height - 4px;
   }
 
-//   &-small &-checked {
-//     .{switch-prefix-cls}-inner {
-//       margin-left: 3px;
-//       margin-right: 18px;
-//     }
-//   }
+  &-small &-checked {
+    .nui-switch-inner {
+      margin-left: 3px;
+      margin-right: 18px;
+    }
+  }
 
   &-small &-checked &-loading-icon {
     left: 100%;
@@ -129,7 +129,7 @@ $switch-duration: .36s;
   }
 
   &-small &-loading &-loading-icon {
-    animation: AntSwitchSmallLoadingCircle 1s infinite linear;
+    //animation: NuiSwitchSmallLoadingCircle 1s infinite linear;
     transform: scale(0.66667);
     font-weight: bold;
   }
@@ -137,10 +137,10 @@ $switch-duration: .36s;
   &-checked {
     background-color: $default;
 
-    // .@{switch-prefix-cls}-inner {
-    //   margin-left: 6px;
-    //   margin-right: 24px;
-    // }
+    .nui-switch-inner {
+      margin-left: 6px;
+      margin-right: 24px;
+    }
 
     &:after {
       left: 100%;
@@ -150,7 +150,7 @@ $switch-duration: .36s;
   }
 
   &-checked &-loading-icon {
-    left: 100%;
+    left: 90%;
     margin-left: -19px;
   }
 
@@ -161,7 +161,7 @@ $switch-duration: .36s;
   }
 }
 
-@keyframes AntSwitchSmallLoadingCircle {
+@keyframes NuiSwitchSmallLoadingCircle {
   0% {
     transform-origin: 50% 50%;
     transform: rotate(0deg) scale(0.66667);

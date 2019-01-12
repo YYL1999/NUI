@@ -10,10 +10,16 @@ export default class Switch extends PureComponent{
    static defaultProps={
     prefixCls: 'nui-switch'
    }
-   static propsTypes={
+   static propTypes={
        prefixCls:PropTypes.string,
        size:PropTypes.oneOf(["small","default","large"]),
-       className:PropTypes.string
+       className:PropTypes.string,
+       autoFocus:PropTypes.bool,
+       checked:PropTypes.bool,
+       checkedChildren:PropTypes.string || PropTypes.node,
+       defaultChecked:PropTypes.bool,
+       disabled:PropTypes.bool,
+       onChange:PropTypes.Function
    }
    focus() {
     this.rcSwitch.focus();
