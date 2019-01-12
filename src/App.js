@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Message,Switch} from './lib';
+import { Button,Icon ,Message,Switch,Divider} from './lib';
 
 class App extends Component {
   myClick() {
@@ -20,6 +20,22 @@ class App extends Component {
         <Message></Message>
         <Switch defaultChecked  />
         <Switch disabled={true} defaultChecked />
+        <div>
+    Text
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+  </div>,
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+    <Divider />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+    <Divider>With Text</Divider>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+    <Divider dashed />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+  </div>
       </div>
     );
   }

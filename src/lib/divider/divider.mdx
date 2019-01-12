@@ -1,0 +1,57 @@
+---
+name: 分割线
+route: /divider
+---
+
+import { Playground, PropsTable } from 'docz'
+import Divider from './index.js'
+
+
+import '../../doczscss/index.scss'
+
+
+## 分割线 
+
+## 代码演示 
+
+### 基本使用 
+
+<Playground>
+    <div>
+    <p>CHINA is NO.1.</p>
+    <Divider />
+    <p>CHINA is NO.1.</p>
+    <Divider>不洗碗</Divider>
+   <p>CHINA is NO.1.</p>
+    <Divider dashed />
+    <p>CHINA is NO.1.</p>
+  </div>
+</Playground>
+
+### 垂直分割线
+
+<Playground>
+    <div>
+    Text
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+    <Divider type="vertical" />
+    <a href="#">Link</a>
+  </div>
+</Playground>
+
+### 分割线位置 
+
+<Playground>
+    <div>
+    <Divider orientation="left">左边</Divider>
+    <p>PHP是世界上最好的语言！！！</p>
+    <Divider orientation="right">右边</Divider>
+    <p>JavaScript才是世界上最好的语言！！！</p>
+  </div>
+</Playground> 
+
+## API 
+
+<PropsTable of={Divider}/>
+
