@@ -20,4 +20,12 @@ $heading-color          : fade(#000, 85%);
 //     padding: 0;
 //     list-style: none;
 //   }
+.red {
+    fill: red;
+  }
   
+  .fancy {
+    fill: none;
+    stroke: black;
+    stroke-width: 3pt;
+  }
