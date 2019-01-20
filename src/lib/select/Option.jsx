@@ -1,14 +1,10 @@
 import React from 'react';
 import { Component, PropTypes, View } from '../../libs';
 
-// type State = {
-//   index: number,
-//   visible: boolean,
-//   hitState: boolean
-// };
+
 
 export default class Option extends Component {
-//   state: State;
+
 
   constructor(props) {
     super(props);
