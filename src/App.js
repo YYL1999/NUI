@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Message,Switch,Divider} from './lib';
+import { Button,Icon ,Message,Switch,Divider,Tag} from './lib';
 
 class App extends Component {
   myClick() {
@@ -36,7 +36,14 @@ class App extends Component {
     <Divider dashed />
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
   </div>
-
+  <div>
+      <Tag>标签一</Tag>
+      <Tag type="gray">标签二</Tag>
+      <Tag type="primary">标签三</Tag>
+      <Tag type="success">标签四</Tag>
+      <Tag type="warning">标签五</Tag>
+      <Tag type="danger">标签六</Tag>
+    </div>
       </div>
     );
   }
