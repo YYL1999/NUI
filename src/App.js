@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Message,Switch,Divider,Tag} from './lib';
+import { Button,Icon ,Message,Switch,Divider,Tag,Rate} from './lib';
 
 class App extends Component {
   myClick() {
@@ -43,6 +43,20 @@ class App extends Component {
       <Tag type="success">标签四</Tag>
       <Tag type="warning">标签五</Tag>
       <Tag type="danger">标签六</Tag>
+    </div>
+    <div className="intro-block">
+      <div className="block">
+        <span className="demonstration">默认不区分颜色</span>
+        <span className="wrapper">
+          <Rate onChange={(val) => alert(val)} />
+        </span>
+      </div>
+      <div className="block">
+        <span className="demonstration">区分颜色</span>
+        <span className="wrapper">
+          <Rate colors={['#99A9BF', '#F7BA2A', '#FF9900']} />
+        </span>
+      </div>
     </div>
       </div>
     );
