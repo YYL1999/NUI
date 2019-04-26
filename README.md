@@ -15,13 +15,13 @@
 ## 📦 Install
 
 ```bash
-npm install NUI --save
+npm install neui --save
 ```
 
 ## 🔨 Usage
 
 ```jsx
-import { Input } from 'NUI';
+import { Input } from 'neui';
 ReactDOM.render(<Input />, mountNode);
 ```
 
