@@ -1,4 +1,4 @@
-## NUI
+## NUI(暂停更新 归期未定)
 
 不洗碗工作室的UI框架 
 
@@ -15,13 +15,13 @@
 ## 📦 Install
 
 ```bash
-npm install NUI --save
+npm install neui --save
 ```
 
 ## 🔨 Usage
 
 ```jsx
-import { Input } from 'NUI';
+import { Input } from 'neui';
 ReactDOM.render(<Input />, mountNode);
 ```
 
