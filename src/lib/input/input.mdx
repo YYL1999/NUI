@@ -6,7 +6,7 @@ route: /input
 import { Playground, PropsTable } from 'docz'
 import Icon from '../icon/index.js'
 import Input from './index.js'
-
+import '../../doczscss/index.scss'
 
 # 输入框
 
@@ -43,9 +43,11 @@ import Input from './index.js'
 ### 前缀与后缀
 
 <Playground>
-  <Input addonBefore={'邮箱'} />
-  <Input addonAfter='￥' size='large' />
-  <Input addonBefore='A' addonAfter={'B'} size='small' />
+  <div class="input_mdx">
+    <Input addonBefore={'邮箱'} />
+    <Input addonAfter='￥' size='large' />
+    <Input addonBefore='A' addonAfter={'B'} size='small' />
+  </div>
 </Playground>
 
 ### 添加图标

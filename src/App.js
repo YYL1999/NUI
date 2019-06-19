@@ -44,20 +44,7 @@ class App extends Component {
       <Tag type="warning">标签五</Tag>
       <Tag type="danger">标签六</Tag>
     </div>
-    <div className="intro-block">
-      <div className="block">
-        <span className="demonstration">默认不区分颜色</span>
-        <span className="wrapper">
-          <Rate onChange={(val) => alert(val)} />
-        </span>
-      </div>
-      <div className="block">
-        <span className="demonstration">区分颜色</span>
-        <span className="wrapper">
-          <Rate colors={['#99A9BF', '#F7BA2A', '#FF9900']} />
-        </span>
-      </div>
-    </div>
+
       </div>
     );
   }
