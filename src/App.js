@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Message,Switch,Divider,Tag,Rate} from './lib';
-
+import { Button,Icon ,Switch,Divider,Tag,Rate} from './lib';
+import './color.scss'
 class App extends Component {
   myClick() {
     console.log('click');
-    console.log(Message)
   }
   render() {
     return (
@@ -17,7 +16,6 @@ class App extends Component {
         >按钮ss</Button>
         <Icon type="next" /> next<br/>
         <Icon type="before"/> before
-        <Message></Message>
         <Switch defaultChecked  />
         <Switch disabled={true} defaultChecked />
         <div>
@@ -44,7 +42,16 @@ class App extends Component {
       <Tag type="warning">标签五</Tag>
       <Tag type="danger">标签六</Tag>
     </div>
+    <div className="slider">
+    <div  className="slider__progress" ></div>
+    <input
+      className="slider__inner"
+      
+      type="range"
 
+    />
+  
+  </div>
       </div>
     );
   }
