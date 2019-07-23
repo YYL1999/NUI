@@ -1,0 +1,42 @@
+---
+name: 下拉菜单
+route: /dropdown
+---
+
+import { Playground, PropsTable } from 'docz'
+import Dropdown from './index.js'
+import Icon from '../icon'
+import Button from '../button'
+import '../../doczscss/index.scss'
+const DropdownMenu=Dropdown.Menu
+const DropdownTrigger=Dropdown.Trigger
+const DropdownMenuItem=Dropdown.MenuItem
+const DropdownMenuDivider=Dropdown.MenuDivider
+
+## 按钮
+
+## 代码演示
+
+### 默认
+
+<Playground>
+  <Dropdown>
+            <Dropdown.Trigger>
+              <Button type="primary">下拉菜单</Button>
+            </Dropdown.Trigger>
+            <Dropdown.Menu>
+              <Dropdown.MenuItem >
+                菜单一
+              </Dropdown.MenuItem>
+              <Dropdown.MenuItem >
+                菜单二
+              </Dropdown.MenuItem>
+              <Dropdown.MenuItem >
+                菜单三
+              </Dropdown.MenuItem>
+              <Dropdown.MenuItem >
+                菜单四
+              </Dropdown.MenuItem>
+            </Dropdown.Menu>
+  </Dropdown>
+</Playground>

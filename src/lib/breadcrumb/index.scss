@@ -1,0 +1,47 @@
+@import'../../color.scss';
+.nui-breadcrumb {
+    margin: 0;
+    list-style: none;
+    color: $breadcrumb-color;
+    font-size: $breadcrumb-font-size;
+    padding: $breadcrumb-padding;
+    padding-bottom: 0;
+    background-color: $breadcrumb-bg;
+  
+    @include clearfix;
+  }
+  
+  .nui-breadcrumb-item {
+    float: left;
+    text-transform: capitalize;
+  
+    // The separator between breadcrumbs (by default, a forward-slash: "/")
+    + .nui-breadcrumb-item::before {
+      display: inline-block; // Suppress underlining of the separator in modern browsers
+      padding-right: $breadcrumb-item-padding;
+      padding-left: $breadcrumb-item-padding;
+      color: $breadcrumb-divider-color;
+      content: '#{$breadcrumb-divider}';
+      .nui-breadcrumb-arrow & {
+        content: '#{$breadcrumb-arrow-divider}';
+      }
+    }
+  
+    + .nui-breadcrumb-item:hover::before {
+      text-decoration: none;
+    }
+  
+    &.active {
+      color: $breadcrumb-active-color;
+    }
+  
+    a:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+  }
+  
+  .nui-breadcrumb-item-addon {
+    margin-right: $breadcrumb-item-addon-spacer;
+    font-size: $breadcrumb-item-addon-font-size;
+  }

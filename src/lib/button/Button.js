@@ -105,8 +105,6 @@ export default class Button extends PureComponent {
     const { component, disabled, loading, htmlType } = this.props;
     const Node = component || 'button';
     const nodeProps = omit(this.props, BLACK_LIST);
-    console.log(this.props)
-    console.log(nodeProps)
     return (
       <Node
         {...nodeProps}

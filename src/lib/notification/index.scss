@@ -1,0 +1,109 @@
+@import "../../color.scss";
+.nui-notification {
+    position: fixed;
+    z-index: $zindex-notification;
+    top: $notification-top;
+    right: 1rem;
+    width: $notification-width;
+  }
+  
+  .nui-notice {
+    display: flex;
+    margin-bottom: $notice-margin-bottom;
+    align-items: center;
+    animation-duration: $notice-enter-duration;
+    animation-timing-function: ease;
+    color: $notice-color;
+    border-radius: $notice-border-radius;
+  
+    animation-fill-mode: both;
+  }
+  
+  .nui-notice-header {
+    padding-left: $notice-header-padding;
+    font-size: $notice-header-font-size;
+  }
+  
+  .nui-notice-body {
+    position: relative;
+    padding: $notice-body-padding;
+    flex: 1;
+    .nui-close {
+      position: absolute;
+      top: $notice-close-offset;
+      right: $notice-close-offset;
+      width: $notice-close-size;
+      height: $notice-close-size;
+      font-size: $notice-close-size;
+      opacity: 0.6;
+      color: $notice-color;
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      float: right;
+      font-weight: 400;
+      line-height: 1;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .nui-notice-title {
+    margin: $notice-title-margin;
+    font-size: $notice-title-font-size;
+    font-weight: 500;
+    line-height: rem(18.5px);
+  }
+  .nui-notice-content {
+    line-height: $notice-content-line-height;
+    word-break: break-all;
+  }
+  
+  // Alternate styles
+  .nui-notice-info {
+    background: $notice-primary-bg;
+  }
+  .nui-notice-success {
+    background: $notice-success-bg;
+  }
+  .nui-notice-warning {
+    background: $notice-warning-bg;
+  }
+  .nui-notice-danger {
+    background: $notice-danger-bg;
+  }
+  
+  //Animation
+  .nui-notice-enter {
+    animation-name: slideInRight;
+  }
+  
+  .nui-notice-leave {
+    animation-name: slideOutRight;
+    animation-duration: $notice-leave-duration;
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutRight {
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+  }
+  

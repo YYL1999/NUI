@@ -9,6 +9,32 @@ $text-color  : fade(#000, 65%);
 $font-size-base         : 14px;
 $font-size-lg           : $font-size-base + 2px;
 $heading-color          : fade(#000, 85%);
+// Define common padding and border radius sizes and more.
+$line-height-base: 1.43 !default;
+$line-height-lg: (4 / 3) !default;
+$line-height-sm: 1.5 !default;
+
+$border-width: 1px !default;
+$border-radius-lg: 4px !default;
+$border-radius-sm: 1px !default;
+$border-radius: 2px !default;
+
+
+$caret-width: 0.3em !default;
+
+// Inverse level
+$inverse-level-1: rgba(0, 0, 0, 0.18) !default;
+$inverse-level-2: rgba(0, 0, 0, 0.24) !default;
+$inverse-level-3: rgba(0, 0, 0, 0.3) !default;
+$inverse-level-6: rgba(0, 0, 0, 0.6) !default;
+// Colors
+$brand-primary: #417FFA !default;
+$brand-secondary: #fa8100 !default;
+$brand-success: #29b056 !default;
+$brand-info: #417FFA !default;
+$brand-warning: #fa8100 !default;
+$brand-danger: #e92c2c !default;
+$brand-pure: #fff !default;
 $cardBg: gray;
 $inputBorder: #e8eaee;
 $meihong:#c45a65;//莓红
@@ -18,17 +44,192 @@ $ganglan:#0f1423;//钢蓝
 $haitang:#f03752;//海棠红
 $muyun:#4f383e;//暮云灰
 $yuanshan:#ccccd6;//远山紫
-// .reset-component() {
-//     font-family: $font-family;
-//     font-size: 14px;
-//     font-variant: tabular-nums;
-//     line-height: 1.5;
-//     color: $text-color;
-//     box-sizing: border-box;
-//     margin: 0;
-//     padding: 0;
-//     list-style: none;
-//   }
+$gray-base: #132240 !default; // 标题文字、重要文字、输入框已输入文字
+$gray-darker: #919cb3 !default; // 次级信息文本颜色、输入框提示文字
+$gray-dark: #b6bfd1 !default; // 不可点击按钮的文字和图标的颜色
+$gray: gray !default; // 输入框颜色、不可点击颜色
+$gray-light: #e9ebf0 !default; // 分割线颜色
+$gray-lighter: #f7f9fc !default; // 页面背景、表头背景等
+$gray-lightest: #f0f2f5 !default; // 模块背景颜色、交替背景色
+$gray-secondary: mix($brand-primary, $gray-dark, 20%) !default;
+$component-active-bg: mix($brand-pure, $brand-primary, 60%) !default;
+//面包屑
+$breadcrumb-color: $gray-darker !default;
+$breadcrumb-font-size: rem(14px) !default;
+$breadcrumb-padding: rem(20px) !default;
+$breadcrumb-bg: transparent !default;
+$breadcrumb-divider-color: $gray !default;
+$breadcrumb-active-color: $gray !default;
+$breadcrumb-divider: '/' !default;
+$breadcrumb-arrow-divider: '>' !default;
+$breadcrumb-item-padding: 0.25rem !default;
+$breadcrumb-item-addon-spacer: rem(5px) !default;
+$breadcrumb-item-addon-font-size: 1.2rem !default;
+// Dropdowns
+//
+// cursor
+$cursor-disabled: not-allowed !default;
+$cursor-pointer: pointer !default;
+
+$zindex-dropdown: 1080 !default;
+$zindex-select: 1080 !default;
+$zindex-datepicker: 1080 !default;
+$dropdown-min-width: 130px !default;
+$dropdown-padding-y: 0.5rem !default;
+$dropdown-margin-top: 4px !default;
+$dropdown-bg: $brand-pure !default;
+$dropdown-border-color: rgba($gray-secondary, 0.2) !default;
+$dropdown-border-width: $border-width !default;
+$dropdown-border-radius: $border-radius-sm;
+$dropdown-divider-bg: #e5e5e5 !default;
+$dropdown-box-shadow: 0 1px 8px $inverse-level-2 !default;
+
+$dropdown-link-hover-color: lighten($brand-primary, 6%) !default;
+$dropdown-link-hover-bg: #f5f5f5 !default;
+
+$dropdown-link-active-color: $gray-light !default;
+$dropdown-link-active-bg: $component-active-bg !default;
+
+$dropdown-link-disabled-color: $gray-light !default;
+
+$dropdown-item-padding-x: 1.5rem !default;
+$dropdown-item-padding-y: 0.5rem !default;
+
+$dropdown-caret-transition: all 0.36s ease !default;
+
+// Cards
+// $card-padding: rem(20px) !default;
+// $card-spacer-x: $card-padding !default;
+// $card-spacer-y: $card-padding !default;
+// $card-border-width: 1px !default;
+// $card-border-color: $border-color !default;
+// $card-border-radius: $border-radius-sm !default;
+// $card-border-radius-inner: $card-border-radius !default;
+// $card-box-shadow: 0px rem(2px) rem(10px) 0px rgba(145, 156, 179, 0.1) !default;
+// $card-cap-bg: #f5f5f5 !default;
+// $card-cap-color: #132240 !default;
+// $card_cap-font-size: $font-size-h4 !default;
+// $card-cap-font-weight: $headings-font-weight !default;
+// $card-bg: $brand-pure !default;
+
+// $card-link-hover-color: $brand-pure !default;
+
+// $card-deck-margin: 0.625rem !default;
+
+// $card-columns-sm-up-column-gap: 1.25rem !default;
+// Spacing
+$pagination-padding-x: rem(7px) !default;
+$pagination-padding-y: 0 !default;
+.text-center {
+  text-align: center !important;
+}
+
+$pagination-color: $gray-base !default;
+$pagination-bg: $brand-pure !default;
+$pagination-border-width: $border-width !default;
+$pagination-border-color: $gray-light !default;
+$pagination-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !default;
+$pagination-border-radius: rem(2px) !default;
+
+$pagination-ellipsis-color: $gray-darker !default;
+$pagination-ellipsis-padding: rem(10px) !default;
+
+$pagination-hover-box-shadow: 0 rem(2px) rem(10px) 0 rgba($gray-darker, 0.3);
+
+$pagination-active-color: $brand-primary !default;
+$pagination-active-border: $brand-primary !default;
+
+$pagination-disabled-color: $gray !default;
+
+$pagination-link-min-size: 32px;
+$pagination-link-line-height:30px;
+
+$pagination-fa-scale: 0.72;
+$pagination-item-spacer-x: 6px;
+
+$pagination-jumper-input-width: rem(92px) !default;
+$pagination-jumper-spacing: rem(20px) !default;
+$pagination-total-spacing:4px !default;
+
+$spacer: 1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0,
+  ),
+  1: (
+    x: $spacer-x,
+    y: $spacer-y,
+  ),
+  2: (
+    x: (
+      $spacer-x * 1.5,
+    ),
+    y: (
+      $spacer-y * 1.5,
+    ),
+  ),
+  3: (
+    x: (
+      $spacer-x * 3,
+    ),
+    y: (
+      $spacer-y * 3,
+    ),
+  ),
+) !default;
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+$navbar-height: 60px !default;
+// Notification
+$notification-width: 400px !default;
+$notification-top: $navbar-height + 10 !default;
+$notice-color: $brand-pure !default;
+$notice-border-radius: $border-radius-lg !default;
+$notice-margin-bottom: $spacer-y !default;
+$notice-close-size: 26px !default;
+$notice-close-offset: 12px !default;
+
+$notice-header-font-size: 40px !default;
+$notice-header-padding: 30px !default;
+$notice-title-margin: 0 0 10px !default;
+$notice-title-font-size: 18px !default;
+$notice-body-padding: 30px 46px 30px 30px !default;
+$notice-content-line-height: 22px !default;
+$zindex-notification: 1060 !default;
+$notice-primary-bg: linear-gradient(
+  270deg,
+  #0c85ff 0%,
+  $brand-info 100%
+) !default;
+$notice-success-bg: linear-gradient(
+  270deg,
+  #00b250 0%,
+  $brand-success 100%
+) !default;
+$notice-warning-bg: linear-gradient(
+  270deg,
+  #ffa200 0%,
+  $brand-warning 100%
+) !default;
+$notice-danger-bg: linear-gradient(
+  270deg,
+  #fd3737 0%,
+  $brand-danger 100%
+) !default;
+
+$notice-enter-duration: 0.2s !default;
+$notice-leave-duration: 0.8s !default;
+$close-color: #000 !default;
+$close-font-weight: normal !default;
 .red {
     fill: red;
   }
@@ -195,3 +396,31 @@ $yuanshan:#ccccd6;//远山紫
       }
     }
   }
+  .close {
+    float: right;
+    font-size: ($font-size-base * 1.5);
+    font-weight: $close-font-weight;
+    line-height: 1;
+    color: $close-color;
+    opacity: 0.2;
+  
+    &:hover {
+      color: $close-color;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+  
