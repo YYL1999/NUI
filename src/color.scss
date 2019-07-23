@@ -47,7 +47,7 @@ $yuanshan:#ccccd6;//远山紫
 $gray-base: #132240 !default; // 标题文字、重要文字、输入框已输入文字
 $gray-darker: #919cb3 !default; // 次级信息文本颜色、输入框提示文字
 $gray-dark: #b6bfd1 !default; // 不可点击按钮的文字和图标的颜色
-$gray: #d1d8e6 !default; // 输入框颜色、不可点击颜色
+$gray: gray !default; // 输入框颜色、不可点击颜色
 $gray-light: #e9ebf0 !default; // 分割线颜色
 $gray-lighter: #f7f9fc !default; // 页面背景、表头背景等
 $gray-lightest: #f0f2f5 !default; // 模块背景颜色、交替背景色
@@ -117,6 +117,70 @@ $dropdown-caret-transition: all 0.36s ease !default;
 // $card-deck-margin: 0.625rem !default;
 
 // $card-columns-sm-up-column-gap: 1.25rem !default;
+// Spacing
+$pagination-padding-x: rem(7px) !default;
+$pagination-padding-y: 0 !default;
+.text-center {
+  text-align: center !important;
+}
+
+$pagination-color: $gray-base !default;
+$pagination-bg: $brand-pure !default;
+$pagination-border-width: $border-width !default;
+$pagination-border-color: $gray-light !default;
+$pagination-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !default;
+$pagination-border-radius: rem(2px) !default;
+
+$pagination-ellipsis-color: $gray-darker !default;
+$pagination-ellipsis-padding: rem(10px) !default;
+
+$pagination-hover-box-shadow: 0 rem(2px) rem(10px) 0 rgba($gray-darker, 0.3);
+
+$pagination-active-color: $brand-primary !default;
+$pagination-active-border: $brand-primary !default;
+
+$pagination-disabled-color: $gray !default;
+
+$pagination-link-min-size: 32px;
+$pagination-link-line-height:30px;
+
+$pagination-fa-scale: 0.72;
+$pagination-item-spacer-x: 6px;
+
+$pagination-jumper-input-width: rem(92px) !default;
+$pagination-jumper-spacing: rem(20px) !default;
+$pagination-total-spacing: rem(4px) !default;
+
+$spacer: 1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0,
+  ),
+  1: (
+    x: $spacer-x,
+    y: $spacer-y,
+  ),
+  2: (
+    x: (
+      $spacer-x * 1.5,
+    ),
+    y: (
+      $spacer-y * 1.5,
+    ),
+  ),
+  3: (
+    x: (
+      $spacer-x * 3,
+    ),
+    y: (
+      $spacer-y * 3,
+    ),
+  ),
+) !default;
+
 @mixin clearfix() {
   &::after {
     content: '';

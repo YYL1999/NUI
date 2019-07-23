@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
 const DropdownMenuItem=Dropdown.MenuItem
 const DropdownMenuDivider=Dropdown.MenuDivider
 class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      totalPage:10,
+      activePage: 2,
+    }
+  }
   myClick() {
     console.log('click');
   }
+   onSelectHandle = pageNo => {
+   this.setState({
+      activePage: pageNo,
+    })
+  }
+
   render() {
+    
     return (
       <div className="App" >
         <Button 
@@ -29,6 +43,14 @@ class App extends Component {
     <Divider type="vertical" />
     <a href="#">Link</a>
   </div>,
+  <Pagination
+   onSelect={this.onSelectHandle}
+   scope={2}
+   totalPage={this.state.totalPage}
+   activePage={this.state.activePage}
+   lastContent="上一页"
+   nextContent="下一页"
+/>
   <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
     <Divider />
