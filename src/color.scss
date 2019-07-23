@@ -15,9 +15,9 @@ $line-height-lg: (4 / 3) !default;
 $line-height-sm: 1.5 !default;
 
 $border-width: 1px !default;
-$border-radius-lg: rem(4px) !default;
+$border-radius-lg: 4px !default;
 $border-radius-sm: 1px !default;
-$border-radius: rem(2px) !default;
+$border-radius: 2px !default;
 
 
 $caret-width: 0.3em !default;
@@ -149,7 +149,7 @@ $pagination-item-spacer-x: 6px;
 
 $pagination-jumper-input-width: rem(92px) !default;
 $pagination-jumper-spacing: rem(20px) !default;
-$pagination-total-spacing: rem(4px) !default;
+$pagination-total-spacing:4px !default;
 
 $spacer: 1rem !default;
 $spacer-x: $spacer !default;
@@ -188,7 +188,48 @@ $spacers: (
     clear: both;
   }
 }
+$navbar-height: 60px !default;
+// Notification
+$notification-width: 400px !default;
+$notification-top: $navbar-height + 10 !default;
+$notice-color: $brand-pure !default;
+$notice-border-radius: $border-radius-lg !default;
+$notice-margin-bottom: $spacer-y !default;
+$notice-close-size: 26px !default;
+$notice-close-offset: 12px !default;
 
+$notice-header-font-size: 40px !default;
+$notice-header-padding: 30px !default;
+$notice-title-margin: 0 0 10px !default;
+$notice-title-font-size: 18px !default;
+$notice-body-padding: 30px 46px 30px 30px !default;
+$notice-content-line-height: 22px !default;
+$zindex-notification: 1060 !default;
+$notice-primary-bg: linear-gradient(
+  270deg,
+  #0c85ff 0%,
+  $brand-info 100%
+) !default;
+$notice-success-bg: linear-gradient(
+  270deg,
+  #00b250 0%,
+  $brand-success 100%
+) !default;
+$notice-warning-bg: linear-gradient(
+  270deg,
+  #ffa200 0%,
+  $brand-warning 100%
+) !default;
+$notice-danger-bg: linear-gradient(
+  270deg,
+  #fd3737 0%,
+  $brand-danger 100%
+) !default;
+
+$notice-enter-duration: 0.2s !default;
+$notice-leave-duration: 0.8s !default;
+$close-color: #000 !default;
+$close-font-weight: normal !default;
 .red {
     fill: red;
   }
@@ -355,3 +396,31 @@ $spacers: (
       }
     }
   }
+  .close {
+    float: right;
+    font-size: ($font-size-base * 1.5);
+    font-weight: $close-font-weight;
+    line-height: 1;
+    color: $close-color;
+    opacity: 0.2;
+  
+    &:hover {
+      color: $close-color;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+  

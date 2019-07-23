@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
@@ -9,8 +9,8 @@ class App extends Component {
   constructor(){
     super()
     this.state={
-      totalPage:10,
-      activePage: 2,
+      totalPage:12999,
+      activePage: 88,
     }
   }
   myClick() {
@@ -21,7 +21,35 @@ class App extends Component {
       activePage: pageNo,
     })
   }
-
+   handleShowInfo = () => {
+    Notification.info({
+      closeable: false,
+      title: '通知',
+      message:
+        '这是一个没有关闭按钮的信息提醒的样式，提示注意信息填是否符合要求。',
+    })
+  }
+   handleShowSuccess = () => {
+    Notification.success({
+      title: '成功',
+      message:
+        '这是一个成功信息的样式，提示信息已经全部填写完成。此条通知会显示5s',
+      duration: 5000,
+    })
+  }
+   handleShowWarning = () => {
+    Notification.warning({
+      title: '警告',
+      message: '请注意，前方有狗熊！',
+      closeable:false
+    })
+  }
+   handleShowError = () => {
+    Notification.error({
+      title: '错误',
+      message: '很遗憾，您的小四轮爆胎了！',
+    })
+  }
   render() {
     
     return (
@@ -44,12 +72,11 @@ class App extends Component {
     <a href="#">Link</a>
   </div>,
   <Pagination
-   onSelect={this.onSelectHandle}
-   scope={2}
-   totalPage={this.state.totalPage}
-   activePage={this.state.activePage}
-   lastContent="上一页"
-   nextContent="下一页"
+    onSelect={this.onSelectHandle}
+    scope={2}
+    totalPage={this.state.totalPage}
+    activePage={this.state.activePage}
+    showQuickJumper
 />
   <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
@@ -78,11 +105,13 @@ class App extends Component {
     />
   
   </div>
+  <Button  type="primary" onClick={this.handleShowSuccess}>信息</Button>
   <Breadcrumb className="no-padding">
   <a href="#">首页</a>
   <a href="#">二级菜单</a>
   <span>当前页面</span>
 </Breadcrumb>
+<Notification />
 <Dropdown>
             <DropdownTrigger>
               <Button type="primary">下拉菜单</Button>
