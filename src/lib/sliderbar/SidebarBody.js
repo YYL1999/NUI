@@ -51,7 +51,7 @@ export default class SidebarBody extends React.PureComponent {
       <div
         ref={this.setContainerRef}
         {...others}
-        className={classnames('sidebar-body', className)}
+        className={classnames('nui-sidebar-body', className)}
         onClick={this.handleUpdateScroll}
       >
         {children}

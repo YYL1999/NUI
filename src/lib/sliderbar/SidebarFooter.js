@@ -26,12 +26,12 @@ export default class SidebarFooter extends React.PureComponent {
       let { className } = child.props
 
       return React.cloneElement(child, {
-        className: classnames('sidebar-footer-item', className),
+        className: classnames('nui-sidebar-footer-item', className),
       })
     })
 
     return (
-      <div {...others} className={classnames('sidebar-footer', className)}>
+      <div {...others} className={classnames('nui-sidebar-footer', className)}>
         {_children}
       </div>
     )
