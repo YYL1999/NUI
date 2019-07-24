@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-
 import './index.scss'
 import SliderItem from './sliderItem';
 import SliderDots from './sliderDots';
@@ -16,7 +14,6 @@ export default class Slider extends Component {
 
   // 向前向后多少
   turn(n) {
-    console.log();
     var _n = this.state.nowLocal + n;
     if(_n < 0) {
       _n = _n + this.props.items.length;
