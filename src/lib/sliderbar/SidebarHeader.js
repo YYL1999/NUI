@@ -21,7 +21,7 @@ const propTypes = {
 
 const SidebarHeader = ({ img, className, children, ...others }) => {
   return (
-    <div {...others} className={classnames('sidebar-header', className)}>
+    <div {...others} className={classnames('nui-sidebar-header', className)}>
       {img && <img src={img} />}
       {children}
     </div>

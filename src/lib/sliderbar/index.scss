@@ -1,0 +1,121 @@
+// 侧边栏
+.nui-sidebar {
+    display: flex;
+    width: $sidebar-width;
+    height: 100%;
+    flex-direction: column;
+    background: $sidebar-bg;
+  }
+  // 头部
+  .nui-sidebar-header {
+    display: flex;
+    padding: $sidebar-header-padding;
+    align-items: center;
+    font-size: $sidebar-font-size;
+    line-height: $sidebar-header-logo-size;
+    color: $sidebar-header-color;
+    border-bottom: $border-width solid $sidebar-header-border-color;
+  
+    img {
+      width: $sidebar-header-logo-size;
+      height: $sidebar-header-logo-size;
+      margin-right: $sidebar-header-logo-margin-right;
+    }
+  }
+  // 主内容
+  .nui-sidebar-body {
+    position: relative;
+    flex: 1;
+    color: $sidebar-nav-item-color;
+    overflow: hidden;
+  
+    .nav-item > a,
+    .nav-link > a,
+    .collapse-title {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: $sidebar-nav-item-padding;
+      font-size: $sidebar-font-size;
+      line-height: $sidebar-line-height;
+      cursor: pointer;
+      .fa:first-child {
+        width: $sidebar-icon-size;
+        height: $sidebar-icon-size;
+        margin-right: $sidebar-header-logo-margin-right;
+        line-height: $sidebar-icon-size;
+        text-align: center;
+        vertical-align: top;
+      }
+    }
+  
+    // 二级菜单增加缩进
+    .nui-collapse {
+      .nav-item,
+      .nav-link {
+        display: block;
+        text-indent: 0;
+        & > a {
+          padding-left: $sidebar-nav-item-secondary-padding-left;
+        }
+      }
+    }
+  
+    .collapse-title:hover,
+    .nav-item:hover,
+    .nav-item.active {
+      color: $sidebar-nav-item-active-color;
+      background-color: $sidebar-nav-item-active-bg;
+    }
+  
+    .nui-nav-item {
+      position: relative;
+      padding: 0;
+      background-color: transparent;
+  
+      &.active::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: rem(4px);
+        content: '';
+        background-color: $brand-primary;
+      }
+  
+      &.disabled {
+        color: inherit;
+        &:hover {
+          background-color: transparent;
+        }
+        & > .nav-link > a {
+          cursor: not-allowed;
+        }
+      }
+    }
+  
+    .nui-collapse-title-addon {
+      margin-right: rem(10px);
+    }
+  }
+  // 底部
+  .nui-sidebar-footer {
+    display: flex;
+    height: $sidebar-footer-height;
+    font-size: $sidebar-footer-font-size;
+    line-height: $sidebar-footer-height;
+    border-top: $border-width solid $sidebar-footer-border-color;
+    &-item {
+      flex: 1;
+      cursor: pointer;
+      text-align: center;
+      color: $sidebar-nav-item-color;
+  
+      &:hover {
+        text-decoration: none;
+        color: $sidebar-nav-item-active-color;
+        background-color: $sidebar-nav-item-active-bg;
+      }
+    }
+  }
+  

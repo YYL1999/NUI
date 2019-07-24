@@ -1,6 +1,6 @@
 {
   "name": "neui",
-  "version": "0.0.1",
+  "version": "1.0.4",
   "description": "不洗碗工作室UI框架",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -94,7 +94,7 @@
     "test": "node scripts/test.js",
     "doc:dev": "docz dev",
     "doc:build": "docz build",
-    "cbuild": "(cross-env BABEL_OUTPUT=commonjs babel src/components --out-dir lib/ & node-sass -r src/components -o lib) && (babel src/components --out-dir esm/ & node-sass -r src/components -o esm)"
+    "cbuild": "(cross-env BABEL_OUTPUT=commonjs babel src/lib --out-dir lib/ & node-sass -r src/lib -o lib) && (babel src/lib --out-dir esm/ & node-sass -r src/lib -o esm)"
   },
   "eslintConfig": {
     "extends": "react-app"
