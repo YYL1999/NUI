@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
@@ -50,10 +50,18 @@ class App extends Component {
       message: '很遗憾，您的小四轮爆胎了！',
     })
   }
+  handleChange =(e) => {
+    console.log(e.currentTarget.value)
+  }
   render() {
     
     return (
       <div className="App" >
+      <Upload
+        placeholder="请上传资质证明"
+        style={{ width: 464 }}
+        onChange={this.handleChange}
+      />
         <Button 
           onClick={this.myClick}
           type="primary"
