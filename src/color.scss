@@ -257,6 +257,78 @@ $sidebar-nav-item-secondary-padding-left: rem(70px) !default;
 $sidebar-footer-border-color: rgba($brand-pure, 0.1) !default;
 $sidebar-footer-height: 3rem !default;
 $sidebar-footer-font-size: $font-size-sm !default;
+// Tags
+$border-color: $gray-light !default;
+$input-line-height: 1.25 !default;
+$input-padding-x: rem(16px) !default;
+$input-padding-x-lg: rem(16px) !default;
+$input-padding-y-lg: rem(21px) !default;
+$input-font-size-lg: rem(16px) !default;
+$input-padding-y: rem(10.5px) !default;
+@mixin tag-variant($color) {
+  background-color: $color;
+  border: 1px solid $color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+@mixin tag-outline-variant($color) {
+  color: $color;
+  border: 1px solid $color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken($color, 6%);
+      border-color: darken($color, 6%);
+    }
+  }
+}
+
+$tag-default: $gray !default;
+$tag-primary: $brand-primary !default;
+$tag-secondary: $brand-secondary !default;
+$tag-success: $brand-success !default;
+$tag-info: $brand-info !default;
+$tag-warning: $brand-warning !default;
+$tag-danger: $brand-danger !default;
+
+$tag-color: $brand-pure !default;
+$tag-link-hover-color: $brand-pure !default;
+$tag-font-size: 12px !default;
+$tag-font-weight: normal !default;
+$tag-padding-x: 3px !default;
+$tag-padding-y: 2px !default;
+$tag-border-radius: $border-radius;
+
+$tag-pill-padding-x: 11px !default;
+$tag-pill-padding-y: 4.5px !default;
+$tag-pill-border-radius: 12px !default;
+
+$tag-close-margin-right: $tag-padding-x !default;
+
+$select-line-height: $input-line-height !default;
+$select-transition: all 0.2s ease !default;
+$select-bg: $brand-pure !default;
+$select-disable-bg: $gray-lighter !default;
+$select-selection-padding-right: 2.25rem !default;
+$select-selection-max-height: 20rem !default;
+$select-options-top: 120% !default;
+$select-selection-color: $gray;
+$select-tags-bg-color: #fff;
+$select-option-inline-height: 1rem;
+$select-options-box-shadow: 0 2px 6px $inverse-level-2 !default;
+$select-options-border: 1px solid $gray-light !default;
+
+$select-option-padding: $input-padding-y $input-padding-x !default;
+$select-option-hover-bg: $gray-lighter !default;
+$select-option-active-color: $brand-primary !default;
+$select-option-disable-color: $gray-light !default;
 
 .red {
     fill: red;
