@@ -1,0 +1,291 @@
+@import '../../color.scss';
+.nui-loading-mask {
+    position: fixed;
+    left: $sidebar-width;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: $loading-mask-bg;
+    z-index: $zindex-loading;
+  }
+  
+  .nui-loading {
+    color: $loading-color;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: $loading-transition;
+  }
+  
+  .nui-loading-addon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .nui-loading-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    font-size: $loading-message-font-size;
+  }
+  
+  .nui-loading-message-dotted {
+    display: inline-block;
+    width: 1rem;
+    margin-left: 5px;
+  }
+  
+  //== -------------------------------- 喷泉式 -------------------------------- ==
+  .nui-loading-fountain {
+    .loading-addon {
+      width: $loading-fountain-width;
+      height: $loading-fountain-height;
+  
+      > :only-child,
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        // background-color: $loading-fountain-bg;
+        background-color: $brand-primary;
+        border-radius: 100%;
+        animation-fill-mode: both;
+        opacity: 0;
+        animation: fountain $loading-fountain-animation-duration linear infinite;
+      }
+  
+      &::before {
+        animation-delay: $loading-fountain-animation-duration * 0.2;
+      }
+  
+      &::after {
+        animation-delay: $loading-fountain-animation-duration * 0.4;
+      }
+    }
+  
+    .nui-loading-message {
+      margin-top: $loading-fountain-height * 0.6;
+    }
+  }
+  
+  @keyframes fountain {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
+  //== -------------------------------- 波纹式 -------------------------------- ==
+  .nui-loading-wave {
+    .nui-loading-addon {
+      width: $loading-wave-width;
+      height: $loading-wave-height;
+  
+      > :only-child,
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: $loading-wave-border;
+        border-radius: 100%;
+        animation-fill-mode: both;
+        opacity: 0;
+        animation: fountain $loading-wave-animation-duration linear infinite;
+      }
+  
+      &::before {
+        animation-delay: $loading-wave-animation-duration * 0.6;
+      }
+  
+      &::after {
+        animation-delay: $loading-wave-animation-duration * 0.8;
+      }
+    }
+  
+    .nui-loading-message {
+      margin-top: $loading-wave-height * 0.6;
+    }
+  }
+  
+  //== -------------------------------- 摆钟式 -------------------------------- ==
+  .nui-loading-pendule {
+    .nui-loading-addon {
+      width: $loading-pendule-width;
+      height: $loading-pendule-height;
+  
+      > :first-child,
+      > :last-child,
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: $loading-pendule-item-width;
+        height: $loading-pendule-item-height;
+        border-radius: 100%;
+        background-color: $loading-pendule-item-bg;
+        transform: translateX(0%);
+      }
+  
+      &::before {
+        animation: pendule-left $loading-pendule-animation-duration ease-out
+          infinite;
+      }
+  
+      &::after {
+        animation: pendule-right $loading-pendule-animation-duration ease-out
+          infinite;
+      }
+    }
+  }
+  
+  @keyframes pendule-left {
+    25% {
+      transform: translateX(-100%);
+      animation-timing-function: ease-in;
+    }
+  
+    50% {
+      transform: translateX(0%);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  @keyframes pendule-right {
+    50% {
+      transform: translateX(0%);
+      animation-timing-function: ease-in;
+    }
+  
+    75% {
+      transform: translatex(100%);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  //== -------------------------------- 旋风式 -------------------------------- ==
+  .nui-loading-cyclone {
+    .nui-loading-addon {
+      width: $loading-cyclone-width;
+      height: $loading-cyclone-height;
+      animation: cyclone $loading-cyclone-animation-duration linear infinite;
+  
+      &,
+      &::before {
+        border: $loading-cyclone-line-height solid transparent;
+        border-top-color: $loading-cyclone-line-color;
+        border-bottom-color: $loading-cyclone-line-color;
+        border-radius: 100%;
+      }
+  
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+  
+      &::before {
+        width: 50%;
+        height: 50%;
+        transform: rotate(90deg);
+        animation: cyclone-inverse $loading-cyclone-animation-duration linear
+          infinite;
+      }
+  
+      &::after {
+        width: $loading-cyclone-ball-width;
+        height: $loading-cyclone-ball-height;
+        background: $loading-cyclone-ball-color;
+        border-radius: 100%;
+        animation: fountain $loading-cyclone-animation-duration linear infinite;
+      }
+    }
+  
+    .nui-loading-message {
+      margin-top: $loading-cyclone-height * 0.6;
+    }
+  }
+  
+  //== -------------------------------- 圆环式 -------------------------------- ==
+  .nui-loading-circle {
+    .nui-loading-addon {
+      width: $loading-circle-width;
+      height: $loading-circle-height;
+      border: $loading-circle-line-height solid transparent;
+      border-top-color: $loading-circle-line-color;
+      border-right-color: $loading-circle-line-color;
+      border-radius: 100%;
+      animation: circle $loading-circle-animation-duration linear infinite;
+    }
+  
+    .nui-loading-message {
+      margin-top: $loading-circle-height * 0.5 + rem(16px);
+    }
+  }
+  
+  @keyframes cyclone {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(90deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes cyclone-inverse {
+    0% {
+      transform: rotate(90deg);
+    }
+  
+    50% {
+      transform: rotate(-180deg);
+    }
+  
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+  
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
