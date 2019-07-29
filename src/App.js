@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading，Select} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
 const DropdownMenuItem=Dropdown.MenuItem
 const DropdownMenuDivider=Dropdown.MenuDivider
+const SelectOption=Select.Option
 class App extends Component {
   constructor(){
     super()
@@ -13,6 +14,9 @@ class App extends Component {
       activePage: 88,
       type: 'wave'
     }
+  }
+  componentDidMount(){
+    console.log(this)
   }
   myClick() {
     console.log('click');
@@ -105,6 +109,21 @@ class App extends Component {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
   </div>
   <div>
+  <Select
+          ref={select => (this.select = select)}
+        //  onChange={this.handleChange}
+        >
+          <SelectOption value={1}>一</SelectOption>
+          <SelectOption value={2}>二</SelectOption>
+          <SelectOption value={3}>三</SelectOption>
+          <SelectOption value={4}>四</SelectOption>
+          <SelectOption value={5}>五</SelectOption>
+          <SelectOption value={6}>六</SelectOption>
+          <SelectOption value={7}>七</SelectOption>
+          <SelectOption value={8}>八</SelectOption>
+          <SelectOption value={9}>九</SelectOption>
+          <SelectOption value={10}>十</SelectOption>
+        </Select>
       <Tag>标签一</Tag>
       <Tag type="gray">标签二</Tag>
       <Tag type="primary">标签三</Tag>
