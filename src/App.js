@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
@@ -11,6 +11,7 @@ class App extends Component {
     this.state={
       totalPage:12999,
       activePage: 88,
+      type: 'wave'
     }
   }
   myClick() {
@@ -20,6 +21,13 @@ class App extends Component {
    this.setState({
       activePage: pageNo,
     })
+  }
+  handleShowLoading = e => {
+    console.log(this,"a",e)
+    this.setState({
+      type: e.currentTarget.name,
+    })
+    Loading.show()
   }
    handleShowInfo = () => {
     Notification.info({
@@ -86,6 +94,7 @@ class App extends Component {
     activePage={this.state.activePage}
     showQuickJumper
 />
+
   <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
     <Divider />
@@ -160,6 +169,13 @@ class App extends Component {
               </DropdownMenuItem>
             </DropdownMenu>
           </Dropdown>
+          <Button type="primary" name="fountain" onClick={this.handleShowLoading}>
+        喷泉-fountain
+      </Button>
+      <Button name="wave" onClick={this.handleShowLoading}>
+        水波-wave
+      </Button>
+      <Loading type={this.state.type} loadingMsg={this.state.type} closeable />
       </div>
     );
   }
