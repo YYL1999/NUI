@@ -232,7 +232,7 @@ $notice-leave-duration: 0.8s !default;
 $close-color: #000 !default;
 $close-font-weight: normal !default;
 //Sidebar
-$sidebar-width: rem(230px) !default;
+$sidebar-width: 230px !default;
 $sidebar-font-size: rem(16px) !default;
 $sidebar-line-height: rem(20.1px) !default;
 $sidebar-bg: linear-gradient(
@@ -332,6 +332,81 @@ $select-option-disable-color: $gray-light !default;
 .hidden {
   display: none !important;
 }
+
+//Upload
+$text-muted: $gray-darker !default;
+$upload-color: $gray-darker !default;
+$upload-icon-color: $gray !default;
+$upload-icon-font-size: rem(20px) !default;
+$upload-padding: rem(16px) !default;
+$upload-offset-left: rem(46px) !default;
+
+$upload-preview-width: rem(90px) !default;
+$upload-preview-height: $upload-preview-width !default;
+$upload-preview-border-color: $gray !default;
+$upload-preview-bg: $gray-lighter !default;
+$upload-preview-color: $text-muted !default;
+$upload-preview-transition: all 0.18s ease-in-out !default;
+// 上传图片icon和文字
+$upload-preview-addon-font-size: rem(30px) !default;
+$upload-preview-addon-width: rem(32px) !default;
+$upload-preview-addon-height: $upload-preview-addon-width !default;
+$upload-preview-text-padding-top: rem(10px) !default;
+$upload-preview-text-font-size: rem(12px) !default;
+// 图片预览
+$upload-preview-img-bg: $brand-pure !default;
+$upload-preview-img-border-color: $gray-light !default;
+$upload-preview-img-offset: rem(10px - $border-width) !default;
+// 图片预览hover
+$upload-preview-remove-font-size: rem(20px) !default;
+$upload-preview-remove-color: $brand-pure !default;
+$upload-preview-remove-bg: rgba(black, 0.5) !default;
+//== Loading
+//
+//
+// Loading
+$loading-mask-bg: transparent !default;
+
+$loading-color: $brand-primary !default;
+$loading-width: 100px !default;
+$loading-height: $loading-width !default;
+$loading-animation-duration: 1s !default;
+$loading-transition: none;
+
+$loading-message-font-size: 1rem !default;
+
+$loading-fountain-bg: $brand-pure !default;
+$loading-fountain-width: $loading-width !default;
+$loading-fountain-height: $loading-fountain-width !default;
+$loading-fountain-animation-duration: 1.2s !default;
+
+$loading-wave-width: $loading-width !default;
+$loading-wave-height: $loading-wave-width !default;
+$loading-wave-border: 4px solid $brand-primary !default;
+$loading-wave-animation-duration: 1.2s !default;
+
+$loading-pendule-item-bg: $brand-primary !default;
+$loading-pendule-item-width: 20px !default;
+$loading-pendule-item-height: $loading-pendule-item-width !default;
+$loading-pendule-animation-duration: 0.8s !default;
+$loading-pendule-width: $loading-pendule-item-width * 4 !default;
+$loading-pendule-height: $loading-pendule-width !default;
+
+$loading-cyclone-width: $loading-width !default;
+$loading-cyclone-height: $loading-cyclone-width !default;
+$loading-cyclone-animation-duration: $loading-animation-duration !default;
+$loading-cyclone-line-height: 2px !default;
+$loading-cyclone-line-color: lighten($brand-primary, 6%) !default;
+$loading-cyclone-ball-width: 1rem !default;
+$loading-cyclone-ball-height: $loading-cyclone-ball-width !default;
+$loading-cyclone-ball-color: darken($brand-primary, 18%) !default;
+
+$loading-circle-width: 34px !default;
+$loading-circle-height: 34px !default;
+$loading-circle-animation-duration: $loading-animation-duration !default;
+$loading-circle-line-height: 2px !default;
+$loading-circle-line-color: $brand-primary !default;
+$zindex-loading: 1050 !default;
 
 .red {
     fill: red;
@@ -499,6 +574,7 @@ $select-option-disable-color: $gray-light !default;
       }
     }
   }
+
   .close {
     float: right;
     font-size: ($font-size-base * 1.5);
