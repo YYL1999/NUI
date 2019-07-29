@@ -14,6 +14,7 @@ const isContainer = (text,array)=>{
         return item.name.toLocaleUpperCase().indexOf(text.toLocaleUpperCase())> -1
     })
 }
+
 export default class Select extends React.PureComponent{
     constructor(props,context){
         super(props,context)
@@ -62,9 +63,10 @@ export default class Select extends React.PureComponent{
       }
     
       componentDidMount() {
+       
         this.handleInit()
       }
-    
+     
       /**
        * @description 初始化
        * @memberof Select
@@ -449,8 +451,8 @@ export default class Select extends React.PureComponent{
     
       get wrapClass() {
         const { multiple } = this.props
-        if (!multiple) return 'select-options-normal'
-        if (multiple) return 'select-options-multiple'
+        if (!multiple) return 'nui-select-options-normal'
+        if (multiple) return 'nui-select-options-multiple'
       }
       /**
        * @description 显示清空按钮
@@ -521,11 +523,12 @@ export default class Select extends React.PureComponent{
         let { children } = this.props
         const optionWidth = this.selectMain && this.selectMain.offsetWidth
         return (
-          <div
+
+            <div
             style={style}
             className={classnames(
-              'select',
-              { 'select-multiple': multiple },
+              'nui-select',
+              { 'nui-select-multiple': multiple },
               { disabled },
               { required },
               { open: showOption },
@@ -537,9 +540,9 @@ export default class Select extends React.PureComponent{
             onMouseLeave={this.handleHideClear}
           >
             {multiple && (
-              <div className='select-tags' onClick={this.toggleOptionsHandle}>
+              <div className='nui-select-tags' onClick={this.toggleOptionsHandle}>
                 {selectedItem.length <= 0 && (
-                  <span className='select-placeholder'>{placeholder}</span>
+                  <span className='nui-select-placeholder'>{placeholder}</span>
                 )}
                 {selectedItem.length > 0 &&
                   selectedItem.map(item => {
@@ -549,7 +552,7 @@ export default class Select extends React.PureComponent{
                         closable
                         theme='default'
                         onClose={e => this.selectMultipleDelete(val, e)}
-                        className='offset-l'
+                        className='nui-offset-l'
                         key={item.value}
                       >
                         {item.name}
@@ -565,21 +568,21 @@ export default class Select extends React.PureComponent{
                 readOnly
                 placeholder={currentPlaceholder}
                 disabled={disabled}
-                className={classnames('select-selection')}
+                className={classnames('nui-select-selection')}
                 onClick={this.toggleOptionsHandle}
                 ref={ref => (this.refMain = ref)}
               />
             )}
             {(!showClear || !clearable) && (
               <i
-                className='fa fa-chevron-down select-addon'
+                className='nui-fa nui-fa-chevron-down nui-select-addon'
                 onClick={this.toggleOptionsHandle}
               />
             )}
     
             {clearable && showClear && !multiple && (
               <i
-                className='fa fa-times select-addon'
+                className='nui-fa nui-fa-times nui-select-addon'
                 onClick={this.handleClearSelect}
               />
             )}
@@ -588,30 +591,30 @@ export default class Select extends React.PureComponent{
                 {
                   hidden: !showOption,
                 },
-                'select-option-outer'
+                'nui-select-option-outer'
               )}
               ref={ref => (this.selectOption = ref)}
               style={{ width: optionWidth }}
             >
-              <div className={classnames(this.wrapClass, 'select-options-wrap')}>
+              <div className={classnames(this.wrapClass, 'nui-select-options-wrap')}>
                 {searchable && (
-                  <div className='select-search-wrap'>
+                  <div className='nui-select-search-wrap'>
                     <DebounceInput
                       debounceTimeout={500}
                       value={queryText}
                       onChange={e => this.handleQuery(e)}
-                      className={classnames('select-search-input')}
+                      className={classnames('nui-select-search-input')}
                     />
-                    <i className='fa fa-search select-search' />
+                    <i className='nui-fa nui-fa-search nui-select-search' />
                   </div>
                 )}
                 <ul
-                  className='select-options'
+                  className='nui-select-options'
                   ref={ref => (this.selectInner = ref)}
                 >
                   {children}
                   {this.emptyText && (
-                    <p className='select-empty'>{this.emptyText}</p>
+                    <p className='nui-select-empty'>{this.emptyText}</p>
                   )}
                 </ul>
               </div>
@@ -620,6 +623,7 @@ export default class Select extends React.PureComponent{
         )
       }
 }
+
 Select.getValue = ref => {
     if (!ref) return undefined
   
@@ -635,5 +639,4 @@ Select.getValue = ref => {
   Select.childContextTypes = {
     componentSelect: PropTypes.any,
   }
-  
   Select.Option = SelectOption

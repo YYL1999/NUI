@@ -329,6 +329,9 @@ $select-option-padding: $input-padding-y $input-padding-x !default;
 $select-option-hover-bg: $gray-lighter !default;
 $select-option-active-color: $brand-primary !default;
 $select-option-disable-color: $gray-light !default;
+.hidden {
+  display: none !important;
+}
 
 .red {
     fill: red;

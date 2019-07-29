@@ -12,10 +12,13 @@ export default class SelectOption extends React.PureComponent{
     static defaultProps = {
         disabled:false
     }
-    state = {
-        active: this.props.active || false,
-        visible : true
-    }
+   constructor(props){
+     super(props)
+     this.state = {
+      active: this.props.active || false,
+      visible : true
+  }
+   }
     get labelName() {
         return (this.props.children || '').toString()
     }
@@ -37,6 +40,7 @@ export default class SelectOption extends React.PureComponent{
         return ind
     }
     parent () {
+      console.log(this)
         return this.context.componentSelect
     }
     optionClickHandle = () => {
@@ -127,17 +131,17 @@ export default class SelectOption extends React.PureComponent{
         const { visible } = this.state
         const displayStyle = visible ? {} : { display: 'none' }
         return (
-          <li
-            {...others}
-            style={displayStyle}
-            className={classnames('nui-select-option', { active, disabled }, className)}
-            onClick={this.optionClickHandle}
-          >
-            {children}
-          </li>
+              <li
+              {...others}
+              style={displayStyle}
+              className={classnames('nui-select-option', { active, disabled }, className)}
+              onClick={this.optionClickHandle}
+            >
+              {children}
+            </li>
         )
       }
 }
-SelectOption.contextType = {
+SelectOption.contextTypes = {
     componentSelect:PropTypes.any
 }

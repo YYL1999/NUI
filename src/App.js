@@ -92,9 +92,9 @@ class App extends Component {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
   </div>
   <div>
-  {/* <Select
+  <Select
           ref={select => (this.select = select)}
-          onChange={this.handleChange}
+        //  onChange={this.handleChange}
         >
           <SelectOption value={1}>一</SelectOption>
           <SelectOption value={2}>二</SelectOption>
@@ -106,7 +106,7 @@ class App extends Component {
           <SelectOption value={8}>八</SelectOption>
           <SelectOption value={9}>九</SelectOption>
           <SelectOption value={10}>十</SelectOption>
-        </Select> */}
+        </Select>
       <Tag>标签一</Tag>
       <Tag type="gray">标签二</Tag>
       <Tag type="primary">标签三</Tag>

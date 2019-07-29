@@ -29,7 +29,7 @@
       text-align: left;
       text-overflow: ellipsis;
       width: 100%;
-      border-radius: rem(2px);
+      border-radius: 2px;
       box-sizing: border-box;
       font-size: 1rem;
       line-height: 0.7;
@@ -37,7 +37,7 @@
       background-color: $select-tags-bg-color;
       background-image: none;
       background-clip: padding-box;
-      border: rem(1px) solid $gray;
+      border: 1px solid $gray;
       transition: border-color ease-in-out 0.18s, box-shadow ease-in-out 0.18s;
       padding-right: $select-selection-padding-right;
       max-height: 5.71rem;
@@ -74,7 +74,7 @@
         line-height: 1.7rem;
       }
       .required & {
-        border: rem(1px) solid $brand-danger;
+        border: 1px solid $brand-danger;
       }
     }
     &.nui-select-multiple {
@@ -93,12 +93,12 @@
     padding: $input-padding-y $input-padding-x;
     font-size: 1rem;
     line-height: 1.25;
-    border-radius: rem(2px);
+    border-radius: 2px;
     color: $gray-base;
     background-color: $select-tags-bg-color;
     background-image: none;
     background-clip: padding-box;
-    border: rem(1px) solid $gray;
+    border: 1p solid $gray;
     transition: border-color ease-in-out 0.18s, box-shadow ease-in-out 0.18s;
     padding-right: $select-selection-padding-right;
   
@@ -136,11 +136,11 @@
   }
   .nui-select-options-wrap {
     box-sizing: border-box;
-    border-radius: rem(2px);
+    border-radius: 2px;
     animation: 0.3s scaleIn ease;
     border: $select-options-border;
     transform-origin: center 0;
-    box-shadow: 0px rem(2px) rem(10px) 0px rgba(19, 34, 64, 0.1);
+    box-shadow: 0px 2px 10px 0px rgba(19, 34, 64, 0.1);
     margin: 0;
     background: $select-bg;
     padding: 0.714rem 0;
@@ -155,7 +155,7 @@
       position: absolute;
       right: $input-padding-x;
       height: 2.142rem;
-      top: rem(8px);
+      top: 8px;
     }
   }
   
