@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import * as System from '../../utils/system'
+import * as System from '../utils/system'
 import * as R from 'ramda'
 import {DebounceInput} from 'react-debounce-input'
 import PerfectScrollbar from 'perfect-scrollbar'
