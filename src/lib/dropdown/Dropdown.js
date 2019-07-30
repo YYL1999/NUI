@@ -5,7 +5,7 @@ import DropdownTrigger from './DropdownTrigger'
 import DropdownMenu from './DropdownMenu'
 import DropdownMenuItem from './DropdownMenuItem'
 import DropdownMenuDivider from './DropdownMenuDivider'
-import * as System from '../../utils/system'
+import * as System from '../utils/system'
 import "./index.scss"
 export default class Dropdown extends React.PureComponent {
   constructor(props, context) {
