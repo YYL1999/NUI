@@ -82,7 +82,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
-  componentIndex: resolveApp('src/components'),
+  componentIndex: resolveApp('src/lib'),
   cjsPath: resolveApp('lib'),
   esmPath: resolveApp('esm')
 };
