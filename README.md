@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="http://ant.design">
-    <img width="200" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
-  </a>
+    <img width="200" src="http://qn.ailpf.cn/githublogo.png">
 </p>
 
 <h1 align="center">NEUI</h1>
