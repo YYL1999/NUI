@@ -17,4 +17,5 @@ export {default as Select} from './select'
 
 export {default as Upload} from './upload'
 export {default as Loading} from './loading'
+export {default as Calendar} from './calendar'
 
