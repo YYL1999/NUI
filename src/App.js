@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading,Select,Calendar} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading,Select,Calendar,TimeSelect} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
@@ -98,7 +98,8 @@ class App extends Component {
     activePage={this.state.activePage}
     showQuickJumper
 />
-
+<TimeSelect className='offset-r-lg' type='time' />
+<TimeSelect className='offset-r-lg' type='second' />
   <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
     <Divider />

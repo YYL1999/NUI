@@ -426,6 +426,22 @@ $calendar-daygroup-item-padding: 0.4rem !default;
 $calendar-daygroup-item-active-bg: rgba($brand-primary, 0.1) !default;
 $calendar-daygroup-item-disable-opacity: 0.4 !default;
 
+$zindex-datepicker: 1080 !default;
+$time-select-wrap-inner-padding: 10px 27px !default;
+$time-select-color: $gray-base;
+$time-select-border-color: $gray-light;
+$time-select-bg-color: #f3f7ff;
+$time-select-hover-color: $brand-info;
+$time-select-border-radio: 0px 2px 10px 0px rgba(19, 34, 64, 0.1);
+.flex {
+  overflow: hidden;
+  display: flex;
+}
+.ps{
+  overflow: hidden;
+  overflow-anchor: none;
+  touch-action: auto;
+}
 .red {
     fill: red;
   }
