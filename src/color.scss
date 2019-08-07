@@ -433,6 +433,35 @@ $time-select-border-color: $gray-light;
 $time-select-bg-color: #f3f7ff;
 $time-select-hover-color: $brand-info;
 $time-select-border-radio: 0px 2px 10px 0px rgba(19, 34, 64, 0.1);
+
+$zindex-message: 1060 !default;
+// Message
+$message-top: ($navbar-height + 20) !default;
+$message-min-width: 360px !default;
+$message-max-width: 700px !default;
+$message-border-radius: $border-radius !default;
+$message-padding: 0 8px 0 15px !default;
+$message-close-padding: 0 rem(7px) !default;
+
+$message-header-font-size: rem(20px) !default;
+$message-body-padding: rem(8px) rem(8px) rem(8px) rem(10px) !default;
+$message-body-font-size: rem(14px) !default;
+$message-body-line-height: rem(22px) !default;
+
+$message-icon-loading-padding: 0 0.5rem 0 0 !default;
+$message-loading-border-color: $gray !default;
+$message-loading-color: $gray-base !default;
+
+$message-enter-duration: 0.24s !default;
+$message-leave-duration: 0.36s !default;
+// Message
+
+@mixin message-variant($color) {
+  background: mix($color, $brand-pure, 10%);
+  border-color: $color;
+  color: $color;
+}
+
 .flex {
   overflow: hidden;
   display: flex;
