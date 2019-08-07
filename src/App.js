@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading,Select,Calendar,TimeSelect} from './lib';
+import { Button,Icon ,Switch,Divider,Tag,Breadcrumb,Dropdown,Pagination,Notification,Upload,Loading,Select,Calendar,TimeSelect,Message} from './lib';
 import './color.scss'
 const DropdownMenu=Dropdown.Menu
 const DropdownTrigger=Dropdown.Trigger
@@ -55,6 +55,9 @@ class App extends Component {
       message: '请注意，前方有狗熊！',
       closeable:false
     })
+  }
+   handleShowInfos = () => {
+    Message.info('这是一条显示1s，可手动关闭的信息！', 1000, true)
   }
    handleShowError = () => {
     Notification.error({
@@ -197,6 +200,10 @@ class App extends Component {
         水波-wave
       </Button>
       <Loading type={this.state.type} loadingMsg={this.state.type} closeable />
+      <Message/>
+      <Button theme="primary" onClick={this.handleShowInfos}>
+      信息
+    </Button>
       </div>
     );
   }
